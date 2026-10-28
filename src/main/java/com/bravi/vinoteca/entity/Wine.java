@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "wine")
 @Data
@@ -18,11 +20,30 @@ public class Wine {
 
     @Column(nullable = false)
     private String nombre;
-    private String bodega;
+
+    @Column(name = "bodega_id")
+    private Long bodegaId;
+
     private String tipo;
+
+    @Positive(message = "El precio debe ser mayor a 0")
     private Double precio;
 
     @Column(length = 1000)
     private String descripcion;
+
+    @Column(name = "imagen_url")
     private String imagenUrl;
+
+    @Column(name = "stock")
+    private Integer stock = 0;
+
+    @Column(name = "activo")
+    private Boolean activo = true;
+
+    @Column(name = "fecha_creacion")
+    private LocalDateTime fechaCreacion = LocalDateTime.now();
+
+    @Column(name = "fecha_modificacion")
+    private LocalDateTime fechaModificacion;
 }

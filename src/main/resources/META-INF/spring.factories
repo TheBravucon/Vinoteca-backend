@@ -1,0 +1,2 @@
+org.springframework.boot.EnvironmentPostProcessor=\
+com.bravi.vinoteca.config.DotEnvEnvironmentPostProcessor

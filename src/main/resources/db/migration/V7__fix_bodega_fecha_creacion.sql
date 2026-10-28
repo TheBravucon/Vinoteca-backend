@@ -1,0 +1,2 @@
+ALTER TABLE bodega DROP COLUMN fecha_creacion;
+ALTER TABLE bodega ADD fecha_creacion DATETIME2 NOT NULL DEFAULT GETDATE();

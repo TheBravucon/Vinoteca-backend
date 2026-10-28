@@ -1,0 +1,3 @@
+ALTER TABLE bodega ADD destacada BIT DEFAULT 0;
+ALTER TABLE bodega ADD activo BIT DEFAULT 1;
+ALTER TABLE bodega ADD fecha_modificacion DATETIME2 DEFAULT GETDATE();
